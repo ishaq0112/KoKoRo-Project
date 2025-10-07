@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* KoKoRo Design System - Calming Mental Health App
+All colors MUST be HSL for consistency and theming.
+*/
+
+@layer base {
+  :root {
+    /* Core Background & Text */
+    --background: 220 20% 97%;
+    --foreground: 220 20% 15%;
+
+    /* Card Components */
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    /* Popovers & Dropdowns */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    /* Primary Brand - Calming Blue */
+    --primary: 210 100% 70%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 210 60% 85%;
+    --primary-glow: 210 100% 80%;
+
+    /* Secondary - Soft Lavender */
+    --secondary: 250 40% 88%;
+    --secondary-foreground: 250 30% 25%;
+
+    /* Muted Tones */
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Accent - Gentle Purple */
+    --accent: 260 30% 75%;
+    --accent-foreground: 260 30% 20%;
+
+    /* Destructive - Soft Red */
+    --destructive: 0 70% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 220 15% 88%;
+    --input: 220 15% 90%;
+    --ring: 210 100% 70%;
+
+    /* Wellness Colors */
+    --calm: 200 60% 75%;
+    --peace: 180 40% 80%;
+    --serenity: 240 30% 85%;
+    --harmony: 150 30% 80%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-calm: linear-gradient(180deg, hsl(var(--calm)), hsl(var(--peace)));
+    --gradient-hero: linear-gradient(135deg, hsl(220 30% 95%), hsl(210 40% 92%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 15% 98%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(var(--primary) / 0.1);
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.3);
+    --shadow-card: 0 2px 15px hsl(220 15% 50% / 0.08);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Core Background & Text */
+    --background: 220 25% 8%;
+    --foreground: 220 15% 90%;
+
+    /* Card Components */
+    --card: 220 20% 12%;
+    --card-foreground: 220 15% 90%;
+
+    /* Popovers & Dropdowns */
+    --popover: 220 20% 12%;
+    --popover-foreground: 220 15% 90%;
+
+    /* Primary Brand - Softer for dark mode */
+    --primary: 210 80% 65%;
+    --primary-foreground: 220 25% 8%;
+    --primary-soft: 210 40% 25%;
+    --primary-glow: 210 80% 70%;
+
+    /* Secondary - Muted Lavender */
+    --secondary: 250 20% 20%;
+    --secondary-foreground: 250 15% 85%;
+
+    /* Muted Tones */
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 60%;
+
+    /* Accent - Soft Purple */
+    --accent: 260 25% 30%;
+    --accent-foreground: 260 15% 85%;
+
+    /* Destructive - Muted Red */
+    --destructive: 0 60% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Wellness Colors - Adjusted for dark mode */
+    --calm: 200 40% 45%;
+    --peace: 180 30% 50%;
+    --serenity: 240 25% 55%;
+    --harmony: 150 25% 50%;
+
+    /* Borders & Inputs */
+    --border: 220 15% 18%;
+    --input: 220 15% 16%;
+    --ring: 210 80% 65%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Breathing Animation */
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 1; }
+  }
+
+  /* Gentle Pulse */
+  @keyframes gentle-pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  /* Float Animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Gradient Background Animation */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}
+
+@layer components {
+  /* Breathing Circle */
+  .breathing-circle {
+    @apply w-32 h-32 rounded-full bg-gradient-to-r from-primary to-primary-glow;
+    animation: breathe 4s ease-in-out infinite;
+  }
+
+  /* Calm Card */
+  .calm-card {
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-card border border-white/20;
+    background: var(--gradient-card);
+  }
+
+  /* Hero Gradient */
+  .hero-gradient {
+    background: var(--gradient-hero);
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  /* Floating Elements */
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Gentle Glow */
+  .gentle-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Mood Button Base */
+  .mood-btn {
+    @apply relative overflow-hidden rounded-xl p-4 transition-all duration-300;
+    @apply hover:scale-105 hover:shadow-soft active:scale-95;
+  }
+}
